@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use App\User;
+use Auth;
 
 class UsersController extends Controller
 {
@@ -35,7 +35,7 @@ class UsersController extends Controller
     		'password' => bcrypt($request->password),
     	]);
 
-
+        Auth::login($user);
     	//flash() 只在下一次请求内有效
     	session()->flash('success', 'welcome!');
 
