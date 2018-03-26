@@ -27,7 +27,7 @@
 						</li>
 					@else
 						<li><a href="{{ route('help') }}">Help</a></li>
-						<li><a href="#">Login</a></li>
+						<li><a href="{{ route('login') }}">Login</a></li>
 					@endif
 				</ul>
 			</nav>
