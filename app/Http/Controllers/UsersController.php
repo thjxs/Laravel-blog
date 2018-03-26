@@ -78,13 +78,11 @@ class UsersController extends Controller
     {
         $view = 'emails.confirm';
         $data = compact('user');
-        $from = 'T@mail.com';
-        $name = 'T';
         $to   = $user->email;
-        $subject = 'confirm email';
+        $subject = 'Thank you for use this application, please confirm your email';
 
-        Mail::send($view, $data, function($message) use ($from, $name, $to, $subject) {
-            $message->from($from, $name)->to($to)->subject($subject);
+        Mail::send($view, $data, function($message) use ($to, $subject) {
+            $message->to($to)->subject($subject);
         });
     }
 

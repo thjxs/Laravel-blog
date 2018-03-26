@@ -9,4 +9,4 @@
 	<p>begin with</p>
 	<p><a href="{{ route('signup') }}" class="btn btn-lg btn-success" role="button">Register</a></p>
 </div>
-@stop
+@endsection

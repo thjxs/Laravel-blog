@@ -3,4 +3,4 @@
 
 @section('content')
 <h2>help</h2>
-@stop
+@endsection

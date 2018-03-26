@@ -19,7 +19,7 @@
 				</div>
 
 				<div class="form-group">
-					<label for="password">Password</label>
+					<label for="password">Password &nbsp;&nbsp;<a href="{{ route('password.request') }}">Forgot password?</a></label>
 					<input type="password" name="password" class="form-control" value="{{ old('password') }}">
 				</div>
 
@@ -32,8 +32,8 @@
 
 			<hr>
 
-			<p><a href="{{ route('signup') }}">Sign Up</a></p>
+			<p>New to blog? <a href="{{ route('signup') }}">Create an account</a></p>
 		</div>
 	</div>
 </div>
-@stop
+@endsection
