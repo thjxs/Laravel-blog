@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use Auth;
+use Mail;
 
 class UsersController extends Controller
 {
@@ -12,7 +13,7 @@ class UsersController extends Controller
     public function __construct()
     {
         $this->middleware('auth', [
-            'except' => ['show', 'create', 'store', 'index']
+            'except' => ['show', 'create', 'store', 'index', 'confirmEmail']
         ]);
 
         $this->middleware('guest', [
@@ -36,6 +37,9 @@ class UsersController extends Controller
     	return view('users.show', compact('user'));
     }
 
+    /*
+    * registe
+    */
     public function store(Request $request)
     {
 
@@ -54,14 +58,50 @@ class UsersController extends Controller
     		'password' => bcrypt($request->password),
     	]);
 
+        $this->sendEmailConfirmationTo($user);
+        session()->flash('success', 'Please check your registe email to validate');
+        return redirect('/');
         //Auto login
-        Auth::login($user);
+        //Auth::login($user);
     	//flash() 只在下一次请求内有效
-    	session()->flash('success', 'welcome!');
+    	//session()->flash('success', 'welcome!');
 
     	//route() 方法会自动获取 Model 的主键
     	//等同于 redirect()->route('users.show', [$user->id])
-    	return redirect()->route('users.show', [$user]);
+    	//return redirect()->route('users.show', [$user]);
+    }
+
+    /*
+    * Send confirmation to email
+    */
+    public function sendEmailConfirmationTo($user)
+    {
+        $view = 'emails.confirm';
+        $data = compact('user');
+        $from = 'T@mail.com';
+        $name = 'T';
+        $to   = $user->email;
+        $subject = 'confirm email';
+
+        Mail::send($view, $data, function($message) use ($from, $name, $to, $subject) {
+            $message->from($from, $name)->to($to)->subject($subject);
+        });
+    }
+
+    /*
+    * confirm email
+    */
+    public function confirmEmail($token)
+    {
+        $user = User::where('activation_token', $token)->firstOrFail();
+
+        $user->activated = true;
+        $user->activation_token = null;
+        $user->save();
+
+        Auth::login($user);
+        session()->flash('success', 'Activated');
+        return redirect()->route('users.show', [$user]);
     }
 
     public function edit(User $user)
