@@ -3,6 +3,7 @@
 <head>
 	<title>@yield('title', 'blog')</title>
 	<link rel="stylesheet" type="text/css" href="/css/app.css">
+	<link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css">
 </head>
 <body>
 	@include('_header')
