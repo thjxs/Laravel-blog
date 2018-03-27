@@ -15,11 +15,11 @@
 								<li><a href="{{ route('users.edit', Auth::user()->id) }}">Edit profile</a></li>
 								<li class="divider"></li>
 								<li>
-									<a href="#" id="logout">
-										<form action="{{ route('logout') }}" method="post">
+									<a href="#" id="signout">
+										<form action="{{ route('signout') }}" method="post">
 											{{ csrf_field() }}
 											{{ method_field('DELETE') }}
-											<button class="btn btn-block btn-danger" type="submit" name="button">Logout</button>
+											<button class="btn btn-block btn-danger" type="submit" name="button">Sign out</button>
 										</form>
 									</a>
 								</li>
@@ -27,7 +27,7 @@
 						</li>
 					@else
 						<li><a href="{{ route('help') }}">Help</a></li>
-						<li><a href="{{ route('login') }}">Login</a></li>
+						<li><a href="{{ route('signin') }}">Sign in</a></li>
 					@endif
 				</ul>
 			</nav>

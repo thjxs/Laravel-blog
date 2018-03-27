@@ -33,7 +33,7 @@
 					<input type="password" name="password_confirmation" class="form-control" value="{{ old('password_confirmation') }}">
 				</div>
 
-				<button type="submit" class="btn btn-primary">Regist</button>
+				<button type="submit" class="btn btn-primary">Sign up</button>
 			</form>
 		</div>
 	</div>

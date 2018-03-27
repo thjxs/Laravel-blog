@@ -22,12 +22,12 @@
 		</div>
 	@else
 		<div class="jumbotron">
-			<h1>hello</h1>
+			
 			<p class="lead">
-				Your are looking for something
+				As every knows nowadays, the knowledge we possess of life before the beginnings of memory and tradition is derived from the markings and fossils of living things in the stratified rocks. We find ...
 			</p>
-			<p>begin with</p>
-			<p><a href="{{ route('signup') }}" class="btn btn-lg btn-success" role="button">Register</a></p>
+			<p>A long trip begin with...</p>
+			<p><a href="{{ route('signup') }}" class="btn btn-lg btn-success" role="button">Sign up</a></p>
 		</div>
 	@endif
 @endsection
