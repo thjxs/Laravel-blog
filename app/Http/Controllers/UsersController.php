@@ -140,4 +140,18 @@ class UsersController extends Controller
         session()->flash('success', 'delete success');
         return back();
     }
+
+    public function followings(User $user)
+    {
+        $users = $user->followings()->paginate(30);
+        $title = 'followings';
+        return view('users.show_follow', compact('users', 'title'));
+    }
+
+    public function followers(User $user)
+    {
+        $users = $user->followers()->paginate(30);
+        $title = 'followers';
+        return view('users.show_follow', compact('users', 'title'));
+    }
 }
