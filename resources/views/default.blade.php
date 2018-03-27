@@ -11,9 +11,10 @@
 		<div class="col-md-offset-1 col-md-10">
 			@include('shared._message')
 			@yield('content')
-			@include('_footer')
+			
 		</div>
 	</div>
+	@include('_footer')
 	<script src="/js/app.js"></script>
 </body>
 </html>

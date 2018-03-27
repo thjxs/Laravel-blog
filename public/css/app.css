@@ -8518,36 +8518,27 @@ footer {
   color: #777;
 }
 
+footer .list-inline {
+  margin: 0;
+  padding: 0;
+}
+
+footer .copyright {
+  font-size: 14px;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+footer .col-lg-8 {
+  width: 100%;
+}
+
 footer a {
   color: #555;
 }
 
 footer a:hover {
   color: #222;
-}
-
-footer small {
-  float: left;
-}
-
-footer ul {
-  float: right;
-  list-style: none;
-}
-
-footer ul li {
-  float: left;
-  margin-left: 15px;
-}
-
-footer img.brand-icon {
-  width: 16px;
-  height: 16px;
-}
-
-footer .slogon {
-  font-size: 13px;
-  font-weight: bold;
 }
 
 aside section {
@@ -8659,5 +8650,23 @@ input {
   margin: 0 auto;
   display: block;
   margin-top: 25px;
+}
+
+/* mmqrcode */
+
+#weixin {
+  position: relative;
+}
+
+#weixin:hover #mmqrcode {
+  display: block;
+}
+
+#mmqrcode {
+  position: absolute;
+  width: 150px;
+  bottom: 30px;
+  left: -48px;
+  display: none;
 }
 

@@ -158,37 +158,28 @@ footer {
 	border-top: 1px solid #eaeaea;
 	color: #777;
 
+	.list-inline {
+		margin: 0;
+		padding: 0;
+	}
+
+	.copyright {
+		font-size: 14px;
+		margin-bottom: 0;
+		text-align: center;
+	}
+
+	.col-lg-8 {
+		width: 100%;
+	}
+
 	a {
 		color: #555;
 	}
 
 	a:hover {
 		color: #222;
-	}
-
-	small {
-		float: left;
-	}
-
-	ul {
-		float: right;
-		list-style: none;
-
-		li {
-			float: left;
-			margin-left: 15px;
-		}
-	}
-
-	img.brand-icon {
-		width: 16px;
-		height: 16px;
-	}
-
-	.slogon {
-		font-size: 13px;
-		font-weight: bold;
-	}
+	}	
 }
 
 aside {
@@ -292,4 +283,20 @@ input {
 	margin: 0 auto;
 	display: block;
 	margin-top: 25px;
+}
+
+/* mmqrcode */
+
+#weixin {
+    position: relative;
+}
+#weixin:hover #mmqrcode{
+    display: block;
+}
+#mmqrcode {
+    position: absolute;
+    width: 150px;
+    bottom: 30px;
+    left: -48px;
+    display: none;
 }
