@@ -26,7 +26,7 @@
 			<p class="lead">
 				As every knows nowadays, the knowledge we possess of life before the beginnings of memory and tradition is derived from the markings and fossils of living things in the stratified rocks. We find ...
 			</p>
-			<p>A long trip begin with...</p>
+			<p>A long journey begin with...</p>
 			<p><a href="{{ route('signup') }}" class="btn btn-lg btn-success" role="button">Sign up</a></p>
 		</div>
 	@endif
